@@ -1,0 +1,27 @@
+// FONTS
+$sans-serif: 'Droid Arabic Kufi', $verdana, sans-serif;
+$droid-sans: 'Droid Arabic Kufi', 'sans-serif';
+$din-normal: 'din-normal';
+$monospace: Monaco, 'Bitstream Vera Sans Mono', 'Lucida Console', monospace;
+$body-font-family: $droid-sans;
+$serif: $georgia;
+
+// IMAGES: backgrounds
+$homepage-bg-image:  url(../images/edraak_header_bg_ar.png);
+$homepage-bg-image_ar:  url(../images/edraak_header_bg_ar.png);
+
+$login-banner-image: url(../images/bg-banner-account.png);
+$register-banner-image: url(../images/bg-banner-account.png);
+
+$video-thumb-url: '../images/courses/video-thumb2.png';
+
+// ====================
+
+// SPLINT: new standards
+
+// SPLINT: fonts
+$f-serif: $serif;
+$f-sans-serif: $sans-serif;
+$f-monospace: $monospace;
+
+// SPLINT: colors

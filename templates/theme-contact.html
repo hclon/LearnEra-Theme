@@ -1,0 +1,330 @@
+<%! from django.utils.translation import ugettext as _, get_language %>
+<%! from django.core.urlresolvers import reverse %>
+<%! from django_countries.countries import COUNTRIES %>
+<%! from django.core.context_processors import csrf %>
+
+<%namespace name='static' file='../static_content.html'/>
+
+<%inherit file="../main.html" />
+
+<section class="container about">
+##  <nav>
+##    <a href="/t/about.html">${_("Vision")}</a>
+##    <a href="/t/faq.html">${_("Faq")}</a>
+##    <a href="/t/press.html">${_("Press")}</a>
+##    <a href="/t/contact.html" class="active">${_("Contact")}</a>
+##  </nav>
+
+##<script type="text/javascript">
+##    $(document).ready(function() {
+##        // Duplicate our reCapcha
+##        $('#myraterecap').html($('#myrecap').clone(true,true));
+##    });
+##
+##     var RecaptchaOptions = {
+##        theme : 'clean'
+##     };
+##</script>
+
+  <section class="contact">
+    <div class="photo">
+      <img src="${static.url('images/email_contact.png')}">
+    </div>
+    <div class="contacts">
+        % if get_language() == 'ar':
+        <h2>مرحبا!</h2>
+
+        <p>إذا كنت منتسب إلى إحدى مساقات إدراك ولديك أي أسئلة، أو أي اقتراحات، أو أي مشاكل تقنية, أو أي قضايا أخرى تخص مساق معين، الرجاء نشر ذلك على منتديات المناقشة الخاصة بذلك المساق.</p>
+
+##        <p>هل لديك أسئلة عامة عن منصة إدراك؟ يرجى زيارة صفحة الأسئلة الأكتر شيوعاً على موقعنا هنا.</p>
+
+        <p>لا تزال بحاجة إلى مساعدة أو تريد أن تزودنا باقترحات عامة (التي نحن نرحب بها)،  الرجاء تعبئة النموذج أدناه.</p>
+
+        <br/>
+        % if error:
+            <div style="background-color: lightgrey; border: 2px solid #000000; border-radius: 10px; padding: 10px">
+                % if captcha:
+                <p>الرجاء إدخال كلمات عبور (captcha) صحيحة</p>
+                % else:
+                <p style="font-weight: bold">جميع الحقول التي تنتهي بعلامة النجمة (*) مطلوبة.</p>
+                % endif
+            </div>
+        <br/>
+        % endif
+
+        % if success:
+            <div style="background-color: #36B736; border: 2px solid #000000; border-radius: 10px; padding: 10px">
+                <p style="font-weight: bold; color: white">تم إرسال رسالتك. شكرا لك!</p>
+            </div>
+        <br/>
+        % endif
+
+        <form role="form" method="post" action="${reverse('contact')}?form=help">
+            <input type="hidden" name="csrfmiddlewaretoken" value="${ csrf_token }"/>
+            <div class="form-group">
+                <label for="firstname">الاسم الأول*</label>
+                <input type="text" name="firstname" class="form-control">
+            </div>
+
+            <div class="form-group">
+                <label for="lastname">اسم العائلة*</label>
+                <input type="text" name="lastname" class="form-control">
+            </div>
+
+            <div class="form-group">
+                <label for="email">البريد الإلكتروني*</label>
+                <input type="text" name="email" class="form-control">
+            </div>
+
+            <div class="form-group">
+                <label for="meassage">الرسالة*</label>
+                <textarea name="message" class="form-control" placeholder="أدخل رسالتك هنا..."></textarea>
+            </div>
+
+            <div class="form-group">
+                <button name="submit" type="submit" id="submit" class="btn btn-default">أرسل الأن</button>
+            </div>
+        </form>
+
+        <br/>
+        <hr id="collaborate_form"/>
+        <br/>
+
+        <p>نحن نبحث دائما عن فرص جديدة للتعاون. يرجى ملء النموذج أدناه، حتى نتمكن من معرفة المزيد عن اهتماماتك.</p>
+
+        <br/>
+
+        <form role="form" method="post" action="${reverse('contact')}?form=collab">
+            <input type="hidden" name="csrfmiddlewaretoken" value="${ csrf_token }"/>
+            <div class="form-group">
+                <label for="firstname">الاسم الأول*</label>
+                <input type="text" name="firstname" class="form-control">
+            </div>
+
+            <div class="form-group">
+                <label for="lastname">اسم العائلة*</label>
+                <input type="text" name="lastname" class="form-control">
+            </div>
+
+            <div class="form-group">
+                <label for="email">البريد الإلكتروني*</label>
+                <input type="text" name="email" class="form-control">
+            </div>
+
+
+            <div class="form-group">
+                <label for="profession"> أنا...</label>
+                <select name="profession" class="form-control">
+                    <option value="">--</option>
+                    <option value="Professor">أستاذ</option>
+                    <option value="Practitioner">ممارس</option>
+                    <option value="ducational Institution">المؤسسة التعليمية</option>
+                    <option value="Non-governmental Organization">المنظمات غير الحكومية</option>
+                    <option value="Company">شركة</option>
+                </select>
+            </div>
+
+            <div class="form-group">
+            <label for="interest">أنا مهتم ب...</label>
+            <select name="interest" class="form-control">
+                <option value="">--</option>
+                <option value="Creating a MOOC">إنشاء مساق</option>
+                <option value="teaTeaching a MOOC as an assistant instructorching">تدريس مساق كمدرس مساعد</option>
+                <option value="Sponsoring a MOOC">رعاية مساق</option>
+                <option value="Supporting Edraak as a partner">دعم إدراك  كشريك</option>
+            </select>
+            </div>
+
+            <div class="form-group">
+                <label for="instorg">المؤسسة / المنظمة التابعة</label>
+                <input type="text" name="instorg" class="form-control">
+            </div>
+
+            <div class="form-group">
+                <label for="institution">موقع المؤسسة (اختياري)</label>
+                <input type="text" name="institution" class="form-control">
+            </div>
+
+            <div class="form-group">
+                <label for="discipline">قسم/ مجال التخصص</label>
+                <input type="text" name="discipline" class="form-control">
+            </div>
+
+            <div class="form-group">
+                <label for="course-title">عنوان أو الموضوع  المساق</label>
+                <input type="text" name="course-title" class="form-control">
+            </div>
+
+            <div class="field ${settings.REGISTRATION_EXTRA_FIELDS['country']} select form-group" id="field-country">
+              <label for="country">الدولة</label>
+              <select id="country" class="form-control" name="country" ${'required aria-required="true"' if settings.REGISTRATION_EXTRA_FIELDS['country'] == 'required' else ''}>
+                <option value="">--</option>
+                %for code, country_name in COUNTRIES:
+                <option value="${code}">${ unicode(country_name) }</option>
+                %endfor
+              </select>
+            </div>
+
+            <div class="form-group">
+                <label for="meassage">الرسالة*</label>
+                <textarea name="message" class="form-control" placeholder="أدخل رسالتك هنا..."></textarea>
+            </div>
+
+            <div class="form-group">
+                <button name="submit" type="submit" id="submit" class="btn btn-default">أرسل الأن</button>
+            </div>
+        </form>
+        % else:
+
+        <h2>Hi!</h2>
+        <p>If you are an enrolled student and have any questions, feedback, bug reports, suggestions, or any other issues specific to a particular class, please post on the discussion forums of that class.</p>
+
+##        <p>Do we have general questions about Edraak? Please visit our FAQ’s page here. </p>
+
+        <p>Still need help or want to give us general feedback (which we welcome)?  Please fill  in the form below"</p>
+
+        <br/>
+        % if error:
+            <div style="background-color: lightgrey; border: 2px solid #000000; border-radius: 10px; padding: 10px">
+                % if captcha:
+                <p>You have entered a wrong captcha. Your message was not sent.</p>
+                % else:
+                <p style="font-weight: bold">All fields That end with an asterisk (*) are required.</p>
+                % endif
+            </div>
+        <br/>
+        % endif
+
+        % if success:
+            <div style="background-color: #36B736; border: 2px solid #000000; border-radius: 10px; padding: 10px">
+                <p style="font-weight: bold; color: white">Your message has been sent. Thank you!</p>
+            </div>
+        % endif
+
+
+        <form role="form" method="post" action="${reverse('contact')}?form=help">
+            <input type="hidden" name="csrfmiddlewaretoken" value="${ csrf_token }"/>
+            <div class="form-group">
+                <label for="firstname">First Name*</label>
+                <input type="text" name="firstname" class="form-control">
+            </div>
+
+            <div class="form-group">
+                <label for="lastname">Last Name*</label>
+                <input type="text" name="lastname" class="form-control">
+            </div>
+
+            <div class="form-group">
+                <label for="email">E-mail*</label>
+                <input type="text" name="email" class="form-control">
+            </div>
+
+            <div class="form-group">
+                <label for="meassage">Message*</label>
+                <textarea name="message" class="form-control" placeholder="Your message here..."></textarea>
+            </div>
+
+            <div class="form-group">
+                <button name="submit" type="submit" id="submit" class="btn btn-default">Send Now</button>
+            </div>
+        </form>
+
+        <br/>
+        <hr id="collaborate_form"/>
+        <br/>
+
+        <p>We are always looking for new opportunities of collaboration. Please fill in the form below, so we can learn more about your interests. We look forward to hearing from you!</p>
+
+        <br/>
+
+        <form role="form" method="post" action="${reverse('contact')}?form=collab">
+            <input type="hidden" name="csrfmiddlewaretoken" value="${ csrf_token }"/>
+            <div class="form-group">
+                <label for="firstname">First Name*</label>
+                <input type="text" name="firstname" class="form-control">
+            </div>
+
+            <div class="form-group">
+                <label for="lastname">Last Name*</label>
+                <input type="text" name="lastname" class="form-control">
+            </div>
+
+            <div class="form-group">
+                <label for="email">E-mail*</label>
+                <input type="text" name="email" class="form-control">
+            </div>
+
+
+            <div class="form-group">
+                <label for="profession">I am a …</label>
+                <select name="profession" class="form-control">
+                    <option value="">--</option>
+                    <option value="Professor">Professor</option>
+                    <option value="Practitioner">Practitioner</option>
+                    <option value="ducational Institution">Educational Institution</option>
+                    <option value="Non-governmental Organization">Non-governmental Organization</option>
+                    <option value="Company">Company</option>
+                </select>
+            </div>
+
+            <div class="form-group">
+            <label for="interest">I am Interested in...</label>
+            <select name="interest" class="form-control">
+                <option value="">--</option>
+                <option value="Creating a MOOC">Creating a MOOC</option>
+                <option value="teaTeaching a MOOC as an assistant instructorching">Teaching a MOOC as an assistant instructor</option>
+                <option value="Sponsoring a MOOC">Sponsoring a MOOC</option>
+                <option value="Supporting Edraak as a partner">Supporting Edraak as a partner</option>
+            </select>
+            </div>
+
+            <div class="form-group">
+                <label for="instorg">Affiliated Institution/Organization</label>
+                <input type="text" name="instorg" class="form-control">
+            </div>
+
+            <div class="form-group">
+                <label for="institution">Institution or Organization’s Website</label>
+                <input type="text" name="institution" class="form-control">
+            </div>
+
+            <div class="form-group">
+                <label for="discipline">Discipline/Department/Field of Expertise</label>
+                <input type="text" name="discipline" class="form-control">
+            </div>
+
+            <div class="form-group">
+                <label for="course-title">Course title or topic</label>
+                <input type="text" name="course-title" class="form-control">
+            </div>
+
+            <div class="field ${settings.REGISTRATION_EXTRA_FIELDS['country']} select form-group" id="field-country">
+              <label for="country">${_("Country")}</label>
+              <select id="country" class="form-control" name="country" ${'required aria-required="true"' if settings.REGISTRATION_EXTRA_FIELDS['country'] == 'required' else ''}>
+                <option value="">--</option>
+                %for code, country_name in COUNTRIES:
+                <option value="${code}">${ unicode(country_name) }</option>
+                %endfor
+              </select>
+            </div>
+
+            <div class="form-group">
+                <label for="meassage">Message*</label>
+                <textarea name="message" class="form-control" placeholder="Your message here..."></textarea>
+            </div>
+
+            <div class="form-group">
+                <button name="submit" type="submit" id="submit" class="btn btn-default">Send Message</button>
+            </div>
+        </form>
+        % endif
+    </div>
+  </section>
+</section>
+
+<style>
+    input[type="submit"]:hover:not(:disabled), input[type="button"]:hover:not(:disabled), button:hover:not(:disabled), .button:hover:not(:disabled) {
+        background-color: #D0D0D0;
+        background-image: none;
+    }
+</style>
