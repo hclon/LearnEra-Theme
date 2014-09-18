@@ -138,7 +138,6 @@
       z-index: 2;
       box-shadow: 0 0 5px #626262;
 
-
       &:hover, &:focus {
         text-decoration: underline;
       }
@@ -784,6 +783,67 @@
       padding-top: 40px;
       color: white;
       line-height: 20px;
+    }
+  }
+
+  #how-it-work h3 {
+    color: #727272;
+    float: left;
+    font-size: 24px;
+    text-align: center;
+    width: 100%;
+  }
+
+  .edraak-partners {
+    a {
+      height: 97px;
+      display: block;
+      float: left;
+      background: url(../themes/edraak/images/partners_logo.png) no-repeat;
+      @include transition(none);
+    }
+
+    @mixin edraak-partner-logo($background-position-x) {
+      background-position: $background-position-x 0px;
+
+      &:hover {
+        background-position: $background-position-x -97px;
+      }
+    }
+
+    .edraak-mit {
+      min-width: 128px;
+      @include edraak-partner-logo(0px);
+    }
+
+    .edraak-harvard {
+      min-width: 192px;
+      @include edraak-partner-logo(-128px);
+    }
+
+    .edraak-edx {
+      min-width: 91px;
+      @include edraak-partner-logo(-320px);
+    }
+
+    .edraak-aub {
+      min-width: 131px;
+      @include edraak-partner-logo(-411px);
+    }
+
+    .edraak-bayt {
+      min-width: 179px;
+      @include edraak-partner-logo(-542px);
+    }
+
+    .edraak-csbe {
+      min-width: 135px;
+      @include edraak-partner-logo(-721px);
+    }
+
+    .edraak-qrta {
+      min-width: 100px;
+      @include edraak-partner-logo(-856px);
     }
   }
 }
