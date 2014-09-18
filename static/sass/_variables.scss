@@ -7,8 +7,7 @@ $body-font-family: $droid-sans;
 $serif: $georgia;
 
 // IMAGES: backgrounds
-$homepage-bg-image:  url(../themes/edraak/images/edraak_header_bg_ar.png);
-$homepage-bg-image_ar:  url(../themes/edraak/images/edraak_header_bg_ar.png);
+$homepage-bg-image: flip(url(../themes/edraak/images/edraak_header_bg.png), url(../themes/edraak/images/edraak_header_bg_ar.png));
 
 $login-banner-image: url(../themes/edraak/images/bg-banner-account.png);
 $register-banner-image: url(../themes/edraak/images/bg-banner-account.png);
