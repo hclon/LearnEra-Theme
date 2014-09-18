@@ -1,0 +1,13 @@
+body { // Alternative to !important
+  h1, h2, h3, h4, h5, h6 {
+    font-family: $f-sans-serif;
+  }
+
+  p {
+    font-family: $f-sans-serif;
+  }
+
+  a:link, a:visited {
+    font-family: $f-sans-serif;
+  }
+}
