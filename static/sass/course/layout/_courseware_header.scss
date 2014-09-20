@@ -1,0 +1,27 @@
+body {
+  header.global.slim {
+    .container .row {
+      border: 0 none;
+      box-shadow: 0;
+    }
+
+    ol {
+      &.user {
+        margin-top: 5px;
+      }
+
+      &.language-select {
+        margin-top: 11px;
+      }
+    }
+
+    h2 {
+      width: auto;
+      height: 25px;
+    }
+  }
+
+  .language-select {
+    margin-top: 11px;
+  }
+}
