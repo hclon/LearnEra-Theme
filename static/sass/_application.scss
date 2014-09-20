@@ -33,7 +33,7 @@ header.global {
       #{$padding-left}: 0;
       #{$padding-right}: 5px;
 
-      &:last-child {
+      &:nth-child(n+5) { // Keep the border only on the first 5 buttons
         #{$border-right}: 0;
       }
 

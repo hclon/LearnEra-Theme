@@ -1,0 +1,17 @@
+header.global {
+  .nav-global {
+    .btn-login-menu {
+      padding: 12px 10px;
+      border: 0px solid #6d6e71;
+      color: #ffffff;
+      background-color: #018C8F;
+      border-radius: 3px;
+      padding-top: 6px;
+
+      &:hover {
+      &:hover {
+        color: #cfe5e3;
+      }
+    }
+  }
+}
