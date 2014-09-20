@@ -4,146 +4,149 @@
 from django.utils import translation %>
 <%namespace name='static' file='static_content.html'/>
 <%! from microsite_configuration.templatetags.microsite import platform_name %>
-<div class="wrapper wrapper-footer">
-<div class="container">
-  <footer>
-    <div class="colophon">
-      <nav class="nav-colophon">
-      <ol>
-          <li class="nav-colophon-01" style="">
-          <a id="about" href="${marketing_link('ABOUT')}">
-                % if translation.get_language() == 'ar':
-                      عن إدراك
-        % else:
-              ${_("About Edraak")}
-        % endif
-          </a>
-          </li>
-          <li class="nav-colophon-01" style="">
-              <a id="about" href="${reverse('contact')}">
-                % if translation.get_language() == 'ar':
-                    تواصل مع إدراك
-                % else:
-                      ${_("Contact Edraak")}
-                % endif
-              </a>
-          </li>
+<div class="wrapper edraak-wrapper-footer">
+    <div class="container">
+        <footer>
+            <div class="colophon">
+                <nav class="nav-colophon">
+                    <ol>
+                        <li class="nav-colophon-01" style="">
+                            <a id="about" href="${marketing_link('ABOUT')}">
+                                % if translation.get_language() == 'ar':
+                                    عن إدراك
+                                % else:
+                                    ${_("About Edraak")}
+                                % endif
+                            </a>
+                        </li>
+                        <li class="nav-colophon-01" style="">
+                            <a id="about" href="${reverse('contact')}">
+                                % if translation.get_language() == 'ar':
+                                    تواصل مع إدراك
+                                % else:
+                                    ${_("Contact Edraak")}
+                                % endif
+                            </a>
+                        </li>
 
-          <li class="nav-colophon-01" style="">
-              <a id="about" href="${marketing_link('FAQ')}">
-                % if translation.get_language() == 'ar':
-                    الأسئلة المتكررة
-                % else:
-                      ${_("FAQ")}
-                % endif
-              </a>
-          </li>
-##          <li class="nav-colophon-04">
-##          <a id="faq" href="${marketing_link('FAQ')}">
-##                % if translation.get_language() == 'ar':
-##                    أسئلة متكرّرة
-##        % else:
-##              ${_("FAQ")}
-##        % endif
-##          </a>
-##          </li>
-##          <li class="nav-colophon-02">
-##          <a id="jobs" href="${marketing_link('JOBS')}">
-##              ${_("Jobs")}
-##          </a>
-##          </li>
+                        <li class="nav-colophon-01" style="">
+                            <a id="about" href="${marketing_link('FAQ')}">
+                                % if translation.get_language() == 'ar':
+                                    الأسئلة المتكررة
+                                % else:
+                                    ${_("FAQ")}
+                                % endif
+                            </a>
+                        </li>
+                        ##          <li class="nav-colophon-04">
+                        ##          <a id="faq" href="${marketing_link('FAQ')}">
+                        ##                % if translation.get_language() == 'ar':
+                        ##                    أسئلة متكرّرة
+                        ##        % else:
+                        ##              ${_("FAQ")}
+                        ##        % endif
+                        ##          </a>
+                        ##          </li>
+                        ##          <li class="nav-colophon-02">
+                        ##          <a id="jobs" href="${marketing_link('JOBS')}">
+                        ##              ${_("Jobs")}
+                        ##          </a>
+                        ##          </li>
 
-      </ol>
-      </nav>
+                    </ol>
+                </nav>
 
-      <div class="colophon-about">
-        % if translation.get_language() == 'ar':
-            <p>ادراك هي مبادرة من مؤسسة الملكة رانيا للتعليم والتنمية</p>
-            <br/>
-            <p>${u"&copy; 2014 {platform_name}, بعض الحقوق محفوظة.".format(platform_name=settings.PLATFORM_NAME)}</p>
-            <br/>
-            <nav class="nav-legal">
-                <ul>
-                  <li class="nav-legal-01">
-                       % if translation.get_language() == 'ar':
-                        <a href="${marketing_link('TOS')}">شروط الخدمة</a>
-                      % else:
-                        <a href="${marketing_link('TOS')}">Terms of Service</a>
-                      % endif                  </li>
-                  <li class="nav-legal-02">
-                    <a href="${marketing_link('PRIVACY')}">
-                              سياسة الخصوصية
-                    </a>
-                  </li>
-                </ul>
-            </nav>
-        % else:
-          <p>${_("Edraak is an Initiative of the Queen Rania Foundation for Education and Development")}</p>
-          <br/>
-          <p>${_("&copy; 2014 {platform_name}, some rights reserved.").format(platform_name=settings.PLATFORM_NAME)}</p>
-          <br/>
-          <nav class="nav-legal">
-                <ul>
-                  <li class="nav-legal-01">
-                       % if translation.get_language() == 'ar':
-                        <a href="${marketing_link('TOS')}">شروط الخدمة</a>
-                      % else:
-                        <a href="${marketing_link('TOS')}">Terms of Service</a>
-                      % endif
+                <div class="colophon-about">
+                    % if translation.get_language() == 'ar':
+                        <p>ادراك هي مبادرة من مؤسسة الملكة رانيا للتعليم والتنمية</p>
+                        <br/>
 
-                  </li>
-                  <li class="nav-legal-02">
-                    <a href="${marketing_link('PRIVACY')}">
-                        % if translation.get_language() == 'ar':
-                              سياسة الخصوصية
-                % else:
-                        ${_("Privacy Policy")}
-                % endif
-                    </a>
-                  </li>
-                </ul>
-           </nav>
+                        <p>${u"&copy; 2014 {platform_name}, بعض الحقوق محفوظة.".format(platform_name=settings.PLATFORM_NAME)}</p>
+                        <br/>
+                        <nav class="nav-legal">
+                            <ul>
+                                <li class="nav-legal-01">
+                                    % if translation.get_language() == 'ar':
+                                        <a href="${marketing_link('TOS')}">شروط الخدمة</a>
+                                    % else:
+                                        <a href="${marketing_link('TOS')}">Terms of Service</a>
+                                    % endif                  </li>
+                                <li class="nav-legal-02">
+                                    <a href="${marketing_link('PRIVACY')}">
+                                        سياسة الخصوصية
+                                    </a>
+                                </li>
+                            </ul>
+                        </nav>
+                    % else:
+                        <p>${_("Edraak is an Initiative of the Queen Rania Foundation for Education and Development")}</p>
+                        <br/>
 
-        % endif
-      </div>
+                        <p>${_("&copy; 2014 {platform_name}, some rights reserved.").format(platform_name=settings.PLATFORM_NAME)}</p>
+                        <br/>
+                        <nav class="nav-legal">
+                            <ul>
+                                <li class="nav-legal-01">
+                                    % if translation.get_language() == 'ar':
+                                        <a href="${marketing_link('TOS')}">شروط الخدمة</a>
+                                    % else:
+                                        <a href="${marketing_link('TOS')}">Terms of Service</a>
+                                    % endif
+
+                                </li>
+                                <li class="nav-legal-02">
+                                    <a href="${marketing_link('PRIVACY')}">
+                                        % if translation.get_language() == 'ar':
+                                            سياسة الخصوصية
+                                        % else:
+                                            ${_("Privacy Policy")}
+                                        % endif
+                                    </a>
+                                </li>
+                            </ul>
+                        </nav>
+
+                    % endif
+                </div>
 
 
-    <div class="references">
-      <nav class="nav-social">
-        <ul>
-          <li class="nav-social-03">
-            <a href="http://youtube.com/user/edraakorg" rel="external">
-                <i class="edraak-icon-small edraak-icon-youtube"></i>
-            </a>
-          </li>
-          <li class="nav-social-03">
-            <a href="https://linkedin.com/company/edraak" rel="external">
-                <i class="edraak-icon-small edraak-icon-linkedin"></i>
-            </a>
-          </li>
-          <li class="nav-social-03">
-            <a href="https://plus.google.com/+EdraakOrg" rel="external">
-                <i class="edraak-icon-small edraak-icon-plus"></i>
-            </a>
-          </li>
-          <li class="nav-social-03">
-            <a href="https://twitter.com/edraak" rel="external">
-                <i class="edraak-icon-small edraak-icon-twitter"></i>
-            </a>
-          </li>
-          <li class="nav-social-03">
-            <a href="http://www.facebook.com/edraakorg" rel="external">
-                <i class="edraak-icon-small edraak-icon-fb"></i>
-            </a>
-          </li>
-        </ul>
-      </nav>
+                <div class="references">
+                    <nav class="nav-social">
+                        <ul>
+                            <li class="nav-social-03">
+                                <a href="http://youtube.com/user/edraakorg" rel="external">
+                                    <i class="edraak-icon-small edraak-icon-youtube"></i>
+                                </a>
+                            </li>
+                            <li class="nav-social-03">
+                                <a href="https://linkedin.com/company/edraak" rel="external">
+                                    <i class="edraak-icon-small edraak-icon-linkedin"></i>
+                                </a>
+                            </li>
+                            <li class="nav-social-03">
+                                <a href="https://plus.google.com/+EdraakOrg" rel="external">
+                                    <i class="edraak-icon-small edraak-icon-plus"></i>
+                                </a>
+                            </li>
+                            <li class="nav-social-03">
+                                <a href="https://twitter.com/edraak" rel="external">
+                                    <i class="edraak-icon-small edraak-icon-twitter"></i>
+                                </a>
+                            </li>
+                            <li class="nav-social-03">
+                                <a href="http://www.facebook.com/edraakorg" rel="external">
+                                    <i class="edraak-icon-small edraak-icon-fb"></i>
+                                </a>
+                            </li>
+                        </ul>
+                    </nav>
 
-        <img class="powered-by" src="${static.url('images/supported-by-openedx-logo-wide.png')}"
-             alt="${_('Powered by OPENedX')}"/>
+                    <img class="powered-by" src="${static.url('themes/edraak/images/supported-by-openedx-logo-wide.png')}"
+                         alt="${_('Powered by OPENedX')}"/>
 
+                </div>
+            </div>
+
+        </footer>
     </div>
-
-  </footer>
-</div>
 </div>

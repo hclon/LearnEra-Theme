@@ -1,0 +1,185 @@
+.edraak-wrapper-footer {
+  padding: 0;
+
+  footer {
+    @include clearfix();
+
+    p, ol, ul {
+    }
+
+    a {
+      @include transition(link-color 0.15s ease-in-out 0s, border 0.15s ease-in-out 0s);
+    }
+
+    // colophon
+    .colophon {
+      margin-right: flex-gutter();
+      width: 100%;
+      float: left;
+      color: $white;
+      margin-bottom: 15px;
+
+      .nav-colophon {
+        @include clearfix();
+        margin: $footer_margin;
+        margin-top: 20px;
+
+        li {
+          float: flip(left, right);
+          #{$margin-right}: ($baseline*0.75);
+          font-size: 20px;
+          #{$border-right}: 1px solid #676767;
+          #{$padding-right}: 15px;
+
+          a {
+            color: #6d6e71;
+            &:hover, &:focus, &:active {
+              color: #6d6e71;
+            }
+          }
+
+          &:last-child {
+            #{$margin-right}: 0;
+            #{$border-right}: 0;
+          }
+        }
+      }
+
+      .colophon-about {
+        @include clearfix();
+        float: flip(left, right);
+
+        img {
+          width: 20%;
+          margin-right: 0;
+          float: left;
+        }
+
+        p {
+          float: flip(left, right);
+          font-size: 13px;
+          color: #6D6E71;
+          padding-top: 0;
+          line-height: 15px;
+        }
+        .nav-legal {
+          @include clearfix();
+          text-align: flip(left, right);
+          float: flip(left, right);
+          margin-top: 5px;
+
+          li {
+            display: inline-block;
+            font-size: em(13);
+
+            a {
+              display: block;
+              color: #6D6E71;
+            }
+          }
+
+          .nav-legal-01 a {
+
+            &:after {
+              margin-left: 5px;
+              content: "-";
+            }
+          }
+        }
+      }
+
+      // references
+      .references {
+        margin: -10px 0 0 0;
+        float: flip(right, left);
+
+        .nav-social {
+          margin: 0;
+          text-align: right;
+
+          li {
+            display: inline-block;
+            margin-right: 10px;
+
+            &:last-child {
+              margin-right: 10px;
+            }
+
+            a {
+              display: block;
+
+              &:hover, &:focus, &:active {
+                border: none;
+                filter: alpha(opacity=60); /* IE */
+                -moz-opacity: 0.6; /* Mozilla */
+                opacity: 0.6; /* CSS3 */
+              }
+            }
+
+            img {
+              display: block;
+            }
+          }
+        }
+
+        .copyright {
+          margin: 8px 0 8px 0;
+          font-size: 16px;
+          color: #6D6E71;
+          text-align: right;
+        }
+
+        .powered-by {
+          float: flip(right, left);
+          margin-top: 10px;
+          #{$margin-right}: 18px;
+        }
+
+      }
+    }
+
+    .edraak-icon-small {
+      background: url(../themes/edraak/images/social.png) no-repeat;
+      width: 52px;
+      height: 52px;
+      position: relative;
+      display: inline-block;
+      vertical-align: bottom;
+
+    }
+    .edraak-icon-meetup {
+      background-position: -804px -11px;
+
+    }
+    .edraak-icon-youtube {
+      background-position: 0px 0px;
+
+    }
+    .edraak-icon-linkedin {
+      background-position: -68px -0px;
+
+    }
+    .edraak-icon-twitter {
+      background-position: -204px -0px;
+
+    }
+    .edraak-icon-plus {
+      background-position: -136px 0px;
+
+    }
+    .edraak-icon-fb {
+      background-position: -272px 0px;
+    }
+  }
+}
+
+// marketing site design syncing
+body.view-register, body.view-login {
+
+  .edraak-wrapper-footer footer {
+
+    .colophon-about img {
+      padding-top: 30px;
+    }
+  }
+}

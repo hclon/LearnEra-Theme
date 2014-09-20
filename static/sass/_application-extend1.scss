@@ -9,5 +9,9 @@ body { // Alternative to !important
 
   a:link, a:visited {
     font-family: $f-sans-serif;
+
+    &:hover, &:focus {
+       text-decoration: none;
+    }
   }
 }
