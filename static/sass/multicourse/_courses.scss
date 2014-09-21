@@ -1,0 +1,26 @@
+body {
+  .find-courses, .university-profile {
+
+    background: none;
+    padding-bottom: 0;
+
+    .highlighted-courses {
+      margin-bottom: 20px;
+      z-index: 1;
+      margin-top: 59px;
+      background-position: 0 -8px;
+
+      .courses {
+        margin: 0;
+      }
+      h2, .main-title {
+        position: relative;
+        top: -9px;
+        text-align: center;
+        div {
+          height: 43px;
+        }
+      }
+    }
+  }
+}
