@@ -17,6 +17,13 @@ body {
       #{$padding-left}: 5px;
       #{$padding-right}: 0;
 
+      li.primary:last-child {
+        a {
+          padding: 0 8px;
+          line-height: 28px;
+        }
+      }
+
       ul.dropdown-menu.expanded {
         left: flip(0, -139px);
         top: 28px;
@@ -34,7 +41,7 @@ body {
         #{$padding-left}: 0;
         #{$padding-right}: 5px;
 
-        &:nth-child(n+5) {
+        &:nth-child(n+5), &:last-child {
           // Keep the border only on the first 5 buttons
           #{$border-right}: 0;
         }
