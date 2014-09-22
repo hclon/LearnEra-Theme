@@ -35,6 +35,8 @@ body {
     }
 
     .nav-global {
+      #{$padding-right}: 0;
+
       li {
         #{$border-right}: 1px solid #646464;
         margin: 0;
