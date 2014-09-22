@@ -221,11 +221,11 @@
                     <li><p>${_("Estimated Effort")}:&nbsp;</p><span class="start-date">${get_course_about_section(course, "effort")}</span></li>
                   % endif
 
-                   % if course_length:
+                   % if not course.start_date_is_still_default and course.end is not None:
                        % if get_language() == 'ar':
-                      <li><p>طول المساق:&nbsp;</p><span class="course-length">${ course_length } أسابيع</span></li>
+                      <li><p>طول المساق:&nbsp;</p><span class="course-length">${ (course.end - course.start).days / 7 } أسابيع</span></li>
                        % else:
-                       <li><p>Course Length:&nbsp;</p><span class="course-length">${ course_length } Weeks</span></li>
+                       <li><p>Course Length:&nbsp;</p><span class="course-length">${ (course.end - course.start).days / 7 } Weeks</span></li>
                        % endif
                    % endif
 
