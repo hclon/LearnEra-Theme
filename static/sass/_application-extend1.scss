@@ -4,6 +4,10 @@ body {
     font-family: $f-sans-serif;
   }
 
+  h1 {
+    margin-top: 0; // Reduce wasted whitespace on static pages.
+  }
+
   p, ul, ol {
     font-family: $f-sans-serif;
   }
