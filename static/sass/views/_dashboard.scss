@@ -1,0 +1,15 @@
+.dashboard {
+  .my-courses {
+    .course {
+      .info {
+        .enter-course {
+          float: flip(left, right);
+
+          & + a {
+            clear: flip(left, right);
+          }
+        }
+      }
+    }
+  }
+}
