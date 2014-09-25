@@ -1,0 +1,24 @@
+body {
+  header.global.slim {
+    box-shadow: none;
+    padding-top: 0;
+    padding-bottom: 0;
+
+    h2 {
+      width: auto;
+    }
+
+    ol.user {
+      margin-top: 4px;
+    }
+
+    .container {
+      margin-top: 0;
+
+      div {
+        box-shadow: none;
+        border: none;
+      }
+    }
+  }
+}
