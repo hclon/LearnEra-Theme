@@ -1,7 +1,12 @@
 body {
+  section:not(.edraak-course-info) {
+    header.global {
+      border-bottom: none;
+    }
+  }
+
   header.global {
     height: auto;
-    border-bottom: none;
     box-shadow: none;
 
     h1.logo {

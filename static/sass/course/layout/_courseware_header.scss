@@ -1,32 +1,34 @@
 body {
-  header.global.slim {
-    box-shadow: none;
-    padding-top: 0;
-    padding-bottom: 0;
+  section:not(.edraak-course-info) {
+    header.global.slim {
+      box-shadow: none;
+      padding-top: 0;
+      padding-bottom: 0;
 
-    h2 {
-      width: auto;
-    }
+      h2 {
+        width: auto;
+      }
 
-    ol.user {
-      margin-top: 4px;
-    }
+      ol.user {
+        margin-top: 4px;
+      }
 
-    .container {
-      margin-top: 0;
+      .container {
+        margin-top: 0;
 
-      div {
-        box-shadow: none;
-        border: none;
+        div {
+          box-shadow: none;
+          border: none;
+        }
       }
     }
-  }
 
-  nav.course-material {
-    ol.course-tabs {
-      width: 960px;
-      margin-left: auto;
-      margin-right: auto;
+    nav.course-material {
+      ol.course-tabs {
+        width: 960px;
+        margin-left: auto;
+        margin-right: auto;
+      }
     }
   }
 }
