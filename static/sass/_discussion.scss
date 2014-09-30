@@ -23,3 +23,15 @@ body {
     }
   }
 }
+
+html {
+  body.discussion, .discussion-module {
+    .comments {
+      .comment-form {
+        .wmd-input {
+          min-height: 45px; // Avoid bad scrollbars
+        }
+      }
+    }
+  }
+}
