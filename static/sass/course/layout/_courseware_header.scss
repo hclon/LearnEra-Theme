@@ -1,5 +1,4 @@
-body {
-  section:not(.edraak-course-info) {
+body:not(.edraak-course-about-body) {
     header.global.slim {
       box-shadow: none;
       padding-top: 0;
@@ -30,5 +29,4 @@ body {
         margin-right: auto;
       }
     }
-  }
 }
