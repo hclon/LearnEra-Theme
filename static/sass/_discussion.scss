@@ -1,0 +1,11 @@
+body {
+  .container .discussion-body {
+    .helpgrid-row {
+      .row-item-full {
+        .row-description {
+          width: 75%; // To fit the narrow layout
+        }
+      }
+    }
+  }
+}
