@@ -8,4 +8,18 @@ body {
       }
     }
   }
+
+  .discussion.container, .discussion-module {
+    .action-button {
+      .action-label {
+        vertical-align: flip(middle, top); // fix odd spacing
+      }
+
+      .action-icon {
+        .icon {
+          vertical-align: flip(middle, top); // fix odd spacing
+        }
+      }
+    }
+  }
 }
