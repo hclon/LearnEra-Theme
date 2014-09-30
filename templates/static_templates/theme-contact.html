@@ -26,10 +26,12 @@
 ##     };
 ##</script>
 
-## HACK: Just to confirm with the theme of abdoosh00/qrf-edx. We don't need this for all the webpages.
-## This affects the style of the buttons and other form elements
-<link rel="stylesheet" href="${static.url('themes/edraak/css/contact-us/bootstrap.min.css')}">
-<link rel="stylesheet" href="${static.url('themes/edraak/css/contact-us/bootstrap-theme.min.css')}">
+<%block name="headextra">
+    ## HACK: Just to confirm with the theme of abdoosh00/qrf-edx. We don't need this for all the webpages.
+    ## This affects the style of the buttons and other form elements
+    <link rel="stylesheet" href="${static.url('themes/edraak/css/contact-us/bootstrap.min.css')}">
+    <link rel="stylesheet" href="${static.url('themes/edraak/css/contact-us/bootstrap-theme.min.css')}">
+</%block>
 
   <section class="contact">
     <div class="photo">
